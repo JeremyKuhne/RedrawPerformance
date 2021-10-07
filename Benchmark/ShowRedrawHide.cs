@@ -8,7 +8,7 @@ namespace Benchmark
     [MemoryDiagnoser]
     // Native memory profiler requires running elevated
     // [NativeMemoryProfiler]
-    public class Redraw
+    public class ShowRedrawHide
     {
         private static readonly TextOnForm s_textOnForm = new TextOnForm();
         private static readonly DataGridViewForm s_dataGridViewForm = new DataGridViewForm();
