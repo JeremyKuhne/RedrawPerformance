@@ -6,8 +6,8 @@
     <RootNamespace>RedrawPerformance</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DefineConstants>$(DefineConstants);NET6API</DefineConstants>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <NoWarn>$(NoWarn);CA1806;IDE0090;WFAC010</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

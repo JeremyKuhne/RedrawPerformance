@@ -6,7 +6,7 @@ namespace RedrawPerformance
 {
     public partial class MainForm : Form
     {
-        private static Stopwatch s_stopwatch = new Stopwatch();
+        private static readonly Stopwatch s_stopwatch = new Stopwatch();
 
         public MainForm()
         {
@@ -42,31 +42,31 @@ namespace RedrawPerformance
             return $"Iterations: {iterations,-6} Allocations per redraw: {afterBytes / 1024.0 / iterations:F3} KB";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             using Form form = new TextOnForm();
             textBox1.Text = MeasureFormPainting(form, 10000);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             using Form form = new DataGridViewForm();
             textBox2.Text = MeasureFormPainting(form, 50);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             using Form form = new ManyControls();
             textBox3.Text = MeasureFormPainting(form, 400);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             using Form form = new MultipleControls();
             textBox4.Text = MeasureFormPainting(form, 400);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Button5_Click(object sender, EventArgs e)
         {
             using Form form = new GroupBoxForm();
             textBox5.Text = MeasureFormPainting(form, 10000);

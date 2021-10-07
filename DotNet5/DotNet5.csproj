@@ -6,11 +6,11 @@
     <RootNamespace>RedrawPerformance</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DefineConstants>$(DefineConstants);NET5API</DefineConstants>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-  </PropertyGroup>
+    <NoWarn>$(NoWarn);CA1806;IDE0090</NoWarn>
+ </PropertyGroup>
 
-  <ItemGroup>
+   <ItemGroup>
     <Compile Include="..\Framework48\**\*.cs" Exclude="..\Framework48\obj\**\*.cs;..\Framework48\bin\**\*.cs;..\Framework48\Properties\*.cs" />
     <EmbeddedResource Include="..\Framework48\**\*.resx" Exclude="..\Framework48\obj\**\*.resx;..\Framework48\bin\**\*.resx;..\Framework48\Properties\*.resx" />
   </ItemGroup>

@@ -23,7 +23,7 @@ namespace RedrawPerformance
 
             _sb.Clear();
             _sb.AppendFormat("OnPaint Invocation {0}", _paintCount);
-#if NET5API
+#if NET
             Span<char> count = stackalloc char[_sb.Length];
             _sb.CopyTo(0, count, _sb.Length);
             Size size = TextRenderer.MeasureText(e, count, _font);
@@ -36,7 +36,7 @@ namespace RedrawPerformance
                 (ClientRectangle.Height / 2) - (size.Height / 2));
 
             TextRenderer.DrawText(
-#if NET5API
+#if NET
                 e,
 #else
                 e.Graphics,

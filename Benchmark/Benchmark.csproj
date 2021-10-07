@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net48;net6.0-windows;net5.0-windows;netcoreapp3.1</TargetFrameworks>
+    <NoWarn>$(NoWarn);CA1806;IDE0090;CA1822</NoWarn>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
+    <PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'=='net48'">
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Framework48\**\*.cs" Exclude="..\Framework48\Program.cs;..\Framework48\obj\**\*.cs;..\Framework48\bin\**\*.cs;..\Framework48\Properties\*.cs" />
+    <EmbeddedResource Include="..\Framework48\**\*.resx" Exclude="..\Framework48\obj\**\*.resx;..\Framework48\bin\**\*.resx;..\Framework48\Properties\*.resx" />
+  </ItemGroup>
+
+</Project>
